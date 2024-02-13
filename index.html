@@ -62,11 +62,20 @@
                 <div class="card  bg-base-100 shadow-xl p-4">
                     <figure><img src="images/parallelogram.png" alt="parallelogram" class="pt-5"/></figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
+                        <h2 class="card-title justify-center">Parallelogram</h2>
+                        <p class="text-center">Area (A) = b X h</p>
+                        <div class="flex gap-2">
+                          <input id="base-input-parallelogram" type="text" placeholder="b" class="w-16 text-xl rounded-sm bg-gray-100">
+                           <span class="ml-2 mr-2">cm</span>
+                           <input id="height-input-parallelogram" type="text" placeholder="h" class="w-16 text-xl rounded-sm bg-gray-100">
+                           <span>cm</span>
+                        </div>
+                        <div>
+                            <p class="text-2xl">Area: <span id="parallelogram-area"></span> <span>cm<sup>2</sup></span></p>
+                        </div>
+                        <div class="card-actions">
+                          <button onclick="calculateParallelogramArea()" class="btn btn-primary bg-[#1090D8] w-full text-white">Calculate</button>
+                        </div>
                     </div>
                 </div>
                 <!--Card - 4 : Rhombus-->
@@ -112,11 +121,32 @@
     </main>
 
     <script>
-        
+        function calculateParallelogramArea(){
+               //Base Triangle
+                const baseInputParallelogram = document.getElementById('base-input-parallelogram')
+                const baseInputParallelogramValue = baseInputParallelogram.value;
+                const baseParallelogram = parseFloat(baseInputParallelogramValue);
+                console.log( baseParallelogram);
+
+                //Height Triangle
+                const heightInputParallelogram = document.getElementById('height-input-parallelogram')
+                const heightInputParallelogramValue = heightInputParallelogram.value;
+                const heightParallelogram = parseFloat(heightInputParallelogramValue);
+                console.log( heightParallelogram);
+
+                 //Calculate Area
+                const area = baseParallelogram * heightParallelogram;
+                console.log('Area of the triangle is ',area);
+
+                //displaye area
+                const parallelogramArea = document.getElementById('parallelogram-area');
+                parallelogramArea.innerText = area;
+        }
     </script>
 
     <script src="scripts/triangle-calculate.js"></script>
     <script src="scripts/rectangle-calculate.js"></script>
+    <script src="scripts/parallelogram.js"></script>
     
 </body>
 </html>
