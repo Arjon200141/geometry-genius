@@ -18,7 +18,7 @@
         <div class="flex flex-col md:flex-row gap-2">
             <!--Shapes Container-->
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                <!--Card - 1 : Trangle-->
+                <!--Card - 1 : Triangle-->
                 <div class="card bg-base-100 shadow-xl p-4">
                     <figure><img src="images/triangle.png" alt="triangle" class="pt-5" /></figure>
                     <div class="card-body">
@@ -79,35 +79,62 @@
                     </div>
                 </div>
                 <!--Card - 4 : Rhombus-->
-                <div class="card  bg-base-100 shadow-xl p-4">
-                    <figure><img src="images/rhombus.png" alt="rhombus" class="pt-5"/></figure>
+                <div class="card bg-base-100 shadow-xl p-4">
+                    <figure><img src="images/rhombus.png" alt="rhombus" class="pt-5" /></figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
+                      <h2 class="card-title justify-center">Rhombus</h2>
+                      <p class="text-center">Area (A) = 0.5 X d1 X d2</p>
+                      <div class="flex gap-2">
+                        <input id="diagonal-first-rhombus" type="text" placeholder="d1" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span class="ml-2 mr-2">cm</span>
+                         <input id="diagonal-second-rhombus" type="text" placeholder="d2" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span>cm</span>
+                      </div>
+                      <div>
+                        <p class="text-2xl">Area: <span id="rhombus-area"></span> <span>cm<sup>2</sup></span></p>
+                      </div>
+                      <div class="card-actions">
+                        <button onclick="calculateRhombusArea()" class="btn btn-primary bg-[#1090D8] w-full text-white">Calculate</button>
                       </div>
                     </div>
                 </div>
                 <!--Card - 5 : Pentagon-->
-                <div class="card  bg-base-100 shadow-xl p-4">
-                    <figure><img src="images/pentagon.png" alt="pentagon" class="pt-5"/></figure>
+                <div class="card bg-base-100 shadow-xl p-4">
+                    <figure><img src="images/pentagon.png" alt="pentagon" class="pt-5" /></figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
+                      <h2 class="card-title justify-center">Pentagon</h2>
+                      <p class="text-center">Area (A) = 0.5 X p X b</p>
+                      <div class="flex gap-2">
+                        <input id="perimeter-input-pentagon" type="text" placeholder="p" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span class="ml-2 mr-2">cm</span>
+                         <input id="base-input-pentagon" type="text" placeholder="b" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span>cm</span>
+                      </div>
+                      <div>
+                        <p class="text-2xl">Area: <span id="pentagon-area"></span> <span>cm<sup>2</sup></span></p>
+                      </div>
+                      <div class="card-actions">
+                        <button onclick="calculatePentagonArea()" class="btn btn-primary bg-[#1090D8] w-full text-white">Calculate</button>
                       </div>
                     </div>
                 </div>
                 <!--Card - 6 : Ellipse-->
-                <div class="card  bg-base-100 shadow-xl p-4">
-                    <figure><img src="images/ellipse.png" alt="ellipse" class="pt-5"/></figure>
+                <div class="card bg-base-100 shadow-xl p-4">
+                    <figure><img src="images/ellipse.png" alt="ellipse" class="pt-5" /></figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
+                      <h2 class="card-title justify-center">Ellipse</h2>
+                      <p class="text-center">Area (A) = πab</p>
+                      <div class="flex gap-2">
+                        <input id="a-axis-input-ellipse" type="text" placeholder="a" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span class="ml-2 mr-2">cm</span>
+                         <input id="b-axis-input-ellipse" type="text" placeholder="b" class="w-16 text-xl rounded-sm bg-gray-100">
+                         <span>cm</span>
+                      </div>
+                      <div>
+                        <p class="text-2xl">Area: <span id="ellipse-area"></span> <span>cm<sup>2</sup></span></p>
+                      </div>
+                      <div class="card-actions">
+                        <button onclick="calculateEllipseArea()" class="btn btn-primary bg-[#1090D8] w-full text-white">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -121,32 +148,15 @@
     </main>
 
     <script>
-        function calculateParallelogramArea(){
-               //Base Triangle
-                const baseInputParallelogram = document.getElementById('base-input-parallelogram')
-                const baseInputParallelogramValue = baseInputParallelogram.value;
-                const baseParallelogram = parseFloat(baseInputParallelogramValue);
-                console.log( baseParallelogram);
-
-                //Height Triangle
-                const heightInputParallelogram = document.getElementById('height-input-parallelogram')
-                const heightInputParallelogramValue = heightInputParallelogram.value;
-                const heightParallelogram = parseFloat(heightInputParallelogramValue);
-                console.log( heightParallelogram);
-
-                 //Calculate Area
-                const area = baseParallelogram * heightParallelogram;
-                console.log('Area of the triangle is ',area);
-
-                //displaye area
-                const parallelogramArea = document.getElementById('parallelogram-area');
-                parallelogramArea.innerText = area;
-        }
+        
     </script>
 
+    <script src="scripts/rhombus.js"></script>
     <script src="scripts/triangle-calculate.js"></script>
     <script src="scripts/rectangle-calculate.js"></script>
     <script src="scripts/parallelogram.js"></script>
+    <script src="scripts/pentagon.js"></script>
+    <script src="scripts/ellipse.js"></script>
     
 </body>
 </html>
